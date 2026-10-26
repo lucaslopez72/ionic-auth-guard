@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Panel de administración</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h1>Bienvenido, {{ currentSession()?.username }}</h1>
+  <p>Rol: {{ currentSession()?.role }}</p>
+  <p>He accedido a la ruta protegida mediante la guarda.</p>
+
+  <ion-button color="danger" (click)="handleLogout()">
+    Cerrar sesión
+  </ion-button>
+</ion-content>

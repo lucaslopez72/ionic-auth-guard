@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Control de acceso</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <main class="login-layout">
+    <section class="login-card" aria-labelledby="login-title">
+      <p class="eyebrow">Panel de control</p>
+      <h1 id="login-title">Iniciar sesión</h1>
+      <p class="intro">Introduce tus credenciales para acceder.</p>
+
+      <form (ngSubmit)="handleLogin()">
+        <ion-item lines="none">
+          <ion-input label="Usuario" labelPlacement="stacked"
+            name="username" autocomplete="username" placeholder="Tu usuario"
+            [(ngModel)]="username" required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-input label="Contraseña" labelPlacement="stacked"
+            name="password" autocomplete="current-password" type="password"
+            placeholder="Tu contraseña" [(ngModel)]="password" required>
+          </ion-input>
+        </ion-item>
+
+        @if (errorMessage) {
+          <ion-text color="danger">
+            <p class="error" role="alert">{{ errorMessage }}</p>
+          </ion-text>
+        }
+
+        <ion-button expand="block" type="submit">Acceder al panel</ion-button>
+      </form>
+    </section>
+  </main>
+</ion-content>

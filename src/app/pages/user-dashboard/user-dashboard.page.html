@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Panel del operador</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <main class="dashboard-layout">
+    <section class="dashboard-card">
+      <p class="eyebrow">Área de usuario</p>
+      <h1>Bienvenido, {{ currentSession()?.username }}</h1>
+      <p>Rol: {{ currentSession()?.role }}</p>
+      <p>Tu sesión está activa. El acceso a administración está reservado al administrador.</p>
+      <ion-button expand="block" (click)="handleLogout()">Cerrar sesión</ion-button>
+    </section>
+  </main>
+</ion-content>
